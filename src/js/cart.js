@@ -32,9 +32,9 @@ function cartItemTemplate(item) {
   }
 }
 
-loadHeaderFooter();
-
 const cart = new ShoppingCart("so-cart", ".product-list");
-cart.renderCartContents();
 
+renderCartContents()
+cart.renderCartContents();
+loadHeaderFooter();
 
