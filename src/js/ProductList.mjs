@@ -1,5 +1,4 @@
-
-export function productCardTemplate(product) {
+function productCardTemplate(product) {
     return `<li class="product-card">
     <a href="product_pages/?product=${product.Id}">
       <img src="${product.Image}" alt="Image of ${product.NameWithoutBrand}">
@@ -20,6 +19,7 @@ export default class ProductList {
     async init() {
         const list = await this.dataSource.getData();
         this.renderList(list);
+
     }
 
     renderList(list) {
