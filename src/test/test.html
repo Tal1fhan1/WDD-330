@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main></main>
+    
+</body>
+<script>
+    const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=1420";
+    let results = null;
+    async function getPokemon(url) {
+      const response = await fetch(url);
+      //check to see if the fetch was successful
+      if (response.ok) {
+        // the API will send us JSON...but we have to convert the response before we can use it
+        // .json() also returns a promise...so we await it as well.
+        const data = await response.json();
+        doStuff(data);
+      }
+    }
+    
+    console.log("second: ", results);
+
+    function doStuff(data) {
+        results = data;
+        console.log('first: ', results);
+        results.results.forEach((pokemon) => {
+          const div = document.createElement('div');
+          div.textContent = pokemon.name;
+          document.querySelector('main').appendChild(div);
+            // assumes you have a <main> element in your HTML document
+        });s
+    }
+    getPokemon(url);
+</script>
+</html>
