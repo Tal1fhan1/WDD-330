@@ -28,6 +28,6 @@ export default class ProductList {
 
     renderList(list) {
         const htmlStrings = list.map(productCardTemplate)
-        this.listElement.innerHTML = htmlStrings
+        this.listElement.innerHTML = htmlStrings.join('');
     }
 }
