@@ -94,6 +94,7 @@ button {
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
+
 /* End utility classes */
 
 /* Cart icon styles */
@@ -162,8 +163,11 @@ button {
   margin: auto;
 }
 
-.product-detail img {
-  width: 100%;
+.product-image {
+  height: 350px;
+  width: auto;
+  margin: auto;
+  display: block;
 }
 
 /* Start cart list card styles */
