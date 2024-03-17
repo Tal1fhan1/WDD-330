@@ -34,6 +34,12 @@ function cartItemTemplate(item) {
 }
 
 const cart = new ShoppingCart("so-cart", ".product-list");
+
 renderCartContents();
+
+renderCartContents()
+cart.renderCartContents();
+loadHeaderFooter();
+
 
 loadHeaderFooter();
