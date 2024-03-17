@@ -6,6 +6,7 @@ import { ProductDetails } from "./ProductDetails.mjs";
 const dataSource = new ProductData();
 const productId = getParams("product");
 
+
 console.log(dataSource);
 console.log(productId);
 
