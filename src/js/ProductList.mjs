@@ -26,7 +26,7 @@ export default class ProductList {
     }
 
     renderList(list) {
-        const htmlStrings = list.map(productCardTemplate)
+        const htmlStrings = list.map(productCardTemplate).join("")
         this.listElement.innerHTML = htmlStrings
     }
 }
