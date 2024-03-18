@@ -29,7 +29,12 @@ export default class ProductList {
     }
 
     renderList(list) {
+<<<<<<< HEAD
+        const htmlStrings = list.map(productCardTemplate).join("")
+        this.listElement.innerHTML = htmlStrings
+=======
         const htmlStrings = list.map(productCardTemplate)
         this.listElement.innerHTML = htmlStrings.join('');
+>>>>>>> b00e1c8ec4856d7f5e61410d0e8e419721fed92a
     }
 }
