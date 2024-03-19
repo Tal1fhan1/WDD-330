@@ -35,7 +35,5 @@ function cartItemTemplate(item) {
   }
   document.querySelector(".counter").innerHTML = itemList.length;
 }
-
 renderCartContents();
-
 loadHeaderFooter();
