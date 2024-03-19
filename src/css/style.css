@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -122,9 +122,7 @@ button {
   text-align: center;
 }
 
-.cart::after {
-
-  content: "0";
+.counter {
   font-size: 12px;
   color: black;
   background: orangered;

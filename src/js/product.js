@@ -6,14 +6,8 @@ import { ProductDetails } from "./ProductDetails.mjs";
 const dataSource = new ProductData();
 const productId = getParams("product");
 
-
-console.log(dataSource);
-console.log(productId);
-
 const product = new ProductDetails(productId, dataSource);
 product.init();
-
-loadHeaderFooter();
 
 function addProductToCart(products) {
   setLocalStorage("so-cart", products);
