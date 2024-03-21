@@ -9,7 +9,8 @@ function renderCartContents() {
   if (htmlItems == null) {
     document.querySelector(".product-list").innerHTML = "Your cart is empty";
   } else {
-    document.querySelector(".product-list").innerHTML = itemList;
+    document.querySelector(".product-list").innerHTML = htmlItems;
+    document.querySelector(".cart-footer").style.display = "block";
   }
 }
 
@@ -31,6 +32,7 @@ function cartItemTemplate(item) {
     </li>`;
     itemList.push(newItem);
     document.querySelector(".counter").innerHTML = itemList.length;
+    document.querySelector(".total").innerHTML = `$${item.FinalPrice}`;
     return newItem;
   }
   document.querySelector(".counter").innerHTML = itemList.length;

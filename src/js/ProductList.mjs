@@ -1,3 +1,5 @@
+import { setLocalStorage } from "./utils.mjs";
+
 function productCardTemplate(product) {
     if (`${product.FinalPrice}` != 179.99) {
         return `<li class="product-card">
