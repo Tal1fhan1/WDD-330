@@ -9,9 +9,15 @@ export function qs(selector, parent = document) {
 export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
+
 // save data to local storage
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
+}
+
+// remove data from local storage
+export function removeStorage(key) {
+  localStorage.removeItem(key);
 }
 
 // set a listener for both touchend and click
