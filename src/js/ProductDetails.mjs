@@ -1,4 +1,4 @@
-import { setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, alertMessage } from "./utils.mjs";
 
 function productDetailsTemplate(product) {
     return `<section class="product-detail">
@@ -26,6 +26,7 @@ export class ProductDetails {
         this.product = {};
         this.dataSource = dataSource;
     }
+
     async init() {
         // use our datasource to get the details for the current product. findProductById will return a promise! use await or .then() to process it
         this.product = await this.dataSource.findProductById(this.productId);
@@ -37,19 +38,15 @@ export class ProductDetails {
             .getElementById("addToCart")
             .addEventListener("click", this.addToCart.bind(this));
     }
-    addToCart() {
-        const cartItem = this.product;
 
-        // Retrieve existing cart items from local storage
-        let existingCartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
-    
-        // Add the new item to the existing cart items
-        existingCartItems.push(cartItem);
-    
-        // Store the updated cart items back to local storage
-        localStorage.setItem("so-cart", JSON.stringify(existingCartItems));
-//        setLocalStorage("so-cart", this.product);
+    addToCart() {
+        let cartContents = getLocalStorage("so-cart") || [];
+
+        cartContents.push(this.product);
+        setLocalStorage("so-cart", cartContents);
+        alertMessage(`${this.product.NameWithoutBrand} added to cart!`);
     }
+
     renderProductDetails(selector) {
         const element = document.querySelector(selector);
         element.insertAdjacentHTML(
@@ -58,4 +55,3 @@ export class ProductDetails {
         );
     }
 }
-

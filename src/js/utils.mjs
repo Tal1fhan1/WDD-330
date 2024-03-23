@@ -20,6 +20,24 @@ export function removeStorage(key) {
   localStorage.removeItem(key);
 }
 
+export function alertMessage(message, scroll = true) {
+  const alertContainer = document.createElement('div');
+  alertContainer.classList.add('custom-alert');
+  
+  const alertMessage = document.createElement('p');
+  alertMessage.textContent = message;
+  alertContainer.appendChild(alertMessage);
+
+  document.body.insertBefore(alertContainer, document.body.firstChild);
+
+  if (scroll) {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  }
+}
+
 // set a listener for both touchend and click
 export function setClick(selector, callback) {
   qs(selector).addEventListener("touchend", (event) => {
