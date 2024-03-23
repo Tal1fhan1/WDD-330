@@ -3,13 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Sleep Outside | Checkout</title>
-
-    <link rel="stylesheet" href="css/style.css" />
-
+    <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/cart.js" type="module"></script>
     <script src="../js/checkout.js" type="module"></script>
   </head>
@@ -21,33 +17,69 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
       </section>
-      <form method="get" action="thanks.html">
+
+      <form id="checkout-form">
+        <!-- Customer Information -->
         <fieldset>
-          <legend>Applicant Information</legend>
-          <label class="top"
-            >First Name* <input type="text" name="fname" required
-          /></label>
-          <label class="top"
-            >Last Name* <input type="text" name="lname" required
-          /></label>
-          <label class="top"
-            >Phone <input type="tel" name="phone" paceholder="1235551234"
-          /></label>
-          <label class="top"
-            >Email*
-            <input
-              type="email"
-              name="email"
-              paceholder="someone@gmail.com"
-              required
-          /></label>
-          <label class="top"
-            >Website <input type="url" name="url" paceholder="http://"
-          /></label>
+            <legend>Customer Information</legend>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required><br>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required><br>
         </fieldset>
 
-        <input type="submit" value="Propose My Course" class="submitBtn" />
-      </form>
+        <!-- Address Information -->
+        <fieldset>
+            <legend>Address Information</legend>
+            <label for="street-address">Street Address:</label>
+            <input type="text" id="street-address" name="street-address" required><br>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required><br>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br>
+            <label for="zip-code">Zip Code:</label>
+            <input type="text" id="zip-code" name="zip-code" required><br>
+        </fieldset>
+
+        <!-- Payment Information -->
+        <fieldset>
+            <legend>Payment Information</legend>
+            <label for="credit-card">Credit Card Number:</label>
+            <input type="text" id="credit-card" name="credit-card" required><br>
+            <label for="expiration-date">Expiration Date:</label>
+            <input type="text" id="expiration-date" name="expiration-date" required><br>
+            <label for="security-code">Security Code:</label>
+            <input type="text" id="security-code" name="security-code" required><br>
+        </fieldset>
+
+        <fieldset class="checkout-summary">
+          <legend>Order Summary</legend>
+          <ul>
+            <li>
+              <label for="cartTotal"
+                >Item Subtotal(<span id="num-items"></span>)</label
+              >
+              <p name="cartTotal" id="cartTotal"></p>
+            </li>
+            <li>
+              <label for="shipping">Shipping Estimate</label>
+              <p id="shipping"></p>
+            </li>
+            <li>
+              <label for="tax">Tax</label>
+              <p id="tax"></p>
+            </li>
+            <li>
+              <label for="orderTotal"><b>Order Total</b></label>
+              <p id="orderTotal"></p>
+            </li>
+          </ul>
+        </fieldset>
+
+        <!-- Checkout Button -->
+        <button id="checkoutSubmit" type="submit">Checkout</button>
+    </form>
+
     </main>
 
     <footer id="main-footer"></footer>
