@@ -3,10 +3,14 @@ import { loadHeaderFooter } from "./utils.mjs";
 
 var itemList = [];
 
+loadHeaderFooter();
+renderCartContents();
+
+
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItemTemplate(cartItems);
-  if (itemList == null) {
+  cartItemTemplate(cartItems);
+  if (itemList.length == 0) {
     document.querySelector(".product-list").innerHTML = "Your cart is empty";
   } else {
     document.querySelector(".product-list").innerHTML = itemList.join("");
@@ -34,11 +38,10 @@ function cartItemTemplate(items) {
         </li>`;
         itemList.push(newItem);
     });
-  }
 
-  const finalPrice = items.reduce((accumulator, currentValue) => {return accumulator + currentValue.FinalPrice}, 0)
-  document.querySelector(".counter").innerHTML = items.length;
-  document.querySelector(".total").innerHTML = `$${finalPrice}`;
+    const finalPrice = items.reduce((accumulator, currentValue) => {return accumulator + currentValue.FinalPrice}, 0)
+    document.querySelector(".counter").innerHTML = items.length;
+    document.querySelector(".total").innerHTML = `$${finalPrice}`;
+  }
 }
-renderCartContents();
-loadHeaderFooter();
+

@@ -26,4 +26,4 @@ function generateRandomString(length) {
     return result;
 }
 
-//removeStorage("so-cart")
+removeStorage("so-cart")
