@@ -37,7 +37,7 @@ function cartItemTemplate(items) {
   }
 
   const finalPrice = items.reduce((accumulator, currentValue) => {return accumulator + currentValue.FinalPrice}, 0)
-  document.querySelector(".counter").innerHTML = itemList.length;
+  document.querySelector(".counter").innerHTML = items.length;
   document.querySelector(".total").innerHTML = `$${finalPrice}`;
 }
 renderCartContents();

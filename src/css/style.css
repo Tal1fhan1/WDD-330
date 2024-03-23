@@ -281,6 +281,10 @@ form {
   border-radius: 5px;
 }
 
+form p {
+  margin: 5px;
+}
+
 /* Style for fieldset */
 fieldset {
   margin-bottom: 20px;
