@@ -7,7 +7,7 @@ const cartList = getLocalStorage("so-cart");
 
 // Retrieve order details from local storage and display them
 const orderId = generateRandomString(8);
-const orderTotal = cartList.reduce((accumulator, currentValue) => {return accumulator + currentValue.FinalPrice}, 0);
+const orderTotal = cartList.reduce((accumulator, currentValue) => {return accumulator + currentValue.FinalPrice}, 0).toFixed(2);
 
 document.getElementById("order-id").textContent = orderId;
 document.getElementById("order-total").textContent = orderTotal;

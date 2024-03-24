@@ -39,7 +39,7 @@ function cartItemTemplate(items) {
         itemList.push(newItem);
     });
 
-    const finalPrice = items.reduce((accumulator, currentValue) => {return accumulator + currentValue.FinalPrice}, 0)
+    const finalPrice = items.reduce((accumulator, currentValue) => {return accumulator + currentValue.FinalPrice}, 0).toFixed(2);
     document.querySelector(".counter").innerHTML = items.length;
     document.querySelector(".total").innerHTML = `$${finalPrice}`;
   }
